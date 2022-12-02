@@ -67,10 +67,10 @@ const ProjectListItem: FC<ProjectListItemProps> = ({ project }) => {
       <div className={ProjectListItemStyles.date}>
         {new Date(project.stream_date).toLocaleDateString()} - 4:30pm
       </div>
-      {!isStreamingCurrently && (
+      {isStreamingCurrently && (
         <iframe
           className={ProjectListItemStyles.embedded}
-          src="https://player.twitch.tv/?channel=zvonecodes&parent=zvonecodes-schedule.netlify.app"
+          src={`https://player.twitch.tv/?channel=zvonecodes&parent=${location.host}`}
         />
       )}
       <div className={ProjectListItemStyles.description}>
