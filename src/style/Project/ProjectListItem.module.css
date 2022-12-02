@@ -1,0 +1,57 @@
+.container {
+  will-change: background-color;
+
+  padding: 10px;
+  margin: 10px auto;
+
+  border: 3px solid #FEEAFA;
+  border-radius: 8px;
+
+  width: 50%;
+
+
+  transition: background-color 0.3s ease-in-out;
+}
+
+.container.past, .container.future {
+  opacity: 0.5;
+}
+
+.container.today {
+  cursor: pointer;
+}
+
+.container.today:hover {
+  background-color: #8080805c; 
+}
+
+.title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+.date {
+  font-size: .85rem;
+  font-style: italic;
+
+  margin: 5px 0;
+}
+
+.description {
+  margin-top: 10px;
+  font-size: 1.2rem;
+}
+
+.embedded {
+  height: 500px;
+  width: 100%;
+}
+
+.tags {
+  margin-top: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  gap: 5px;
+}

@@ -1,0 +1,10 @@
+.container {
+  padding: 30px;
+}
+
+.heading {
+  margin-top: 0;
+  font-style: italic;
+
+  text-align: center;
+}

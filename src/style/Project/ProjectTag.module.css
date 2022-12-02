@@ -1,0 +1,7 @@
+.container {
+  padding: 2px 5px;
+  border-radius: 8px;
+
+  border: 1px solid #FEEAFA;
+  font-weight: bold;
+}
