@@ -41,23 +41,16 @@ const ProjectListItem: FC<ProjectListItemProps> = ({ project }) => {
     }
 
     const currentTime = new Date();
-    const currentHour = currentTime.getHours();
-    const currentMinute = currentTime.getMinutes();
 
-    const streamStartTime = [16, 30];
-    const streamEndTime = [18, 30];
+    const startTime = new Date();
+    startTime.setHours(16);
+    startTime.setMinutes(30);
 
-    // If the current time is between the start and end times, return true
-    if (
-      currentHour >= streamStartTime[0] &&
-      currentHour <= streamEndTime[0] &&
-      currentMinute >= streamStartTime[1] &&
-      currentMinute <= streamEndTime[1]
-    ) {
-      return true;
-    }
+    const endTime = new Date();
+    endTime.setHours(18);
+    endTime.setMinutes(30);
 
-    return false;
+    return currentTime >= startTime && currentTime <= endTime;
   }, [isToday]);
 
   const tags = useMemo(
@@ -68,18 +61,16 @@ const ProjectListItem: FC<ProjectListItemProps> = ({ project }) => {
   return (
     <div
       className={`${ProjectListItemStyles.container} ${ProjectListItemStyles[streamDateClass]}`}
-      onClick={() =>
-        isStreamingCurrently && openUrl("https://www.twitch.tv/zvonecodes/")
-      }
+      onClick={() => isToday && openUrl("https://www.twitch.tv/zvonecodes/")}
     >
       <div className={ProjectListItemStyles.title}>{project.name}</div>
       <div className={ProjectListItemStyles.date}>
         {new Date(project.stream_date).toLocaleDateString()} - 4:30pm
       </div>
-      {isToday && (
+      {!isStreamingCurrently && (
         <iframe
           className={ProjectListItemStyles.embedded}
-          src="https://player.twitch.tv/?channel=zvonecodes"
+          src="https://player.twitch.tv/?channel=zvonecodes&parent=zvonecodes-schedule.netlify.app"
         />
       )}
       <div className={ProjectListItemStyles.description}>
