@@ -1,11 +1,1 @@
-{
-  "projects": [
-    {
-      "name": "Coding a Stream Project Schedule",
-      "description": "For my first stream I'm going to create a simple React app that will show a list of projects and their stream dates.",
-      "tags": ["react", "typescript"],
-      "stream_date": "2022-12-02"
-    }
-  ]
-}
-      
+{"projects":[{"name":"Coding a Stream Project Schedule","description":"For my first stream I'm going to create a simple React app that will show a list of projects and their stream dates.","tags":["react","typescript"],"stream_date":"2022-12-02"},{"name":"Improving the project schedule","description":"Last stream I made a React app for the schedule! In this stream we will improve upon it.","tags":["react","typescript","javascript"],"stream_date":"2022-12-09"}]}
